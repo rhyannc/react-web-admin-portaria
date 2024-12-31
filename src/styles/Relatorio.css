@@ -1,0 +1,170 @@
+.content {
+    padding: 2rem;
+  }
+  
+  .container {
+    background: var(--container-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: var(--primary-color);
+  }
+  
+  button {
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background: var(--primary-dark-color);
+  }
+  
+  .resultados table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  .resultados th,
+  .resultados td {
+    border: 1px solid var(--border-color);
+    padding: 0.75rem;
+    text-align: left;
+    color: var(--text-color);
+  }
+  
+  .resultados th {
+    background: var(--container-background);
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+  
+  .resultados tr:nth-child(even) {
+    background-color: #1f1f23;
+  }
+  
+  /* Modal Styles */
+  .modal-overlay {
+    background-color: rgba(0, 0, 0, 0.75);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal {
+    background: var(--container-background);
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .modal h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .modal table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  .modal th,
+  .modal td {
+    border: 1px solid var(--border-color);
+    padding: 0.75rem;
+    text-align: left;
+    color: var(--text-color);
+  }
+  
+  .modal th {
+    background: var(--container-background);
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+  
+
+  @media print {
+    /* Ocultar tudo que não faz parte do conteúdo a ser impresso */
+    body * {
+      visibility: hidden;
+    }
+  
+    /* Mostrar apenas o conteúdo do modal com ID 'printable-content' */
+    #printable-content, #printable-content * {
+      visibility: visible;
+    }
+  
+    /* Garantir que o conteúdo fique no topo da página ao imprimir */
+    #printable-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+
+ /* Botões no Modal */
+.modal-buttons {
+    display: flex;
+    justify-content: center; /* Centraliza os botões */
+    gap: 1rem; /* Espaçamento entre os botões */
+    margin-top: 1rem;
+  }
+  
+  .close-btn {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .close-btn:hover {
+    background-color: var(--primary-dark-color);
+  }
+  
+  .print-btn {
+    
+    background-color: var(--secondary-color);
+    color: #333; /* Cor escura para o texto */
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center; /* Centraliza o texto verticalmente */
+    justify-content: center; /* Centraliza o texto horizontalmente */
+    gap: 0.5rem; /* Espaço entre o ícone e o texto */
+  }
+  
+  .print-btn:hover {
+    
+    background-color: var(--secondary-dark-color);
+  }
+  
+  

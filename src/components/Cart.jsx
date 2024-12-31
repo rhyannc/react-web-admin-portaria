@@ -1,9 +1,11 @@
 import React from "react";
-import axios from "axios";
+import api from "../services/api";
 import "./../styles/Cart.css";
 
-const Cart = ({ cart, handleRemoveFromCart }) => {
+const Cart = ({ cart, setCart, handleRemoveFromCart }) => {
   const totalAmount = cart.reduce((acc, item) => acc + item.total, 0);
+  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0); // Calcula o total de itens
+
 
   const handleFinalizeSale = async () => {
     if (cart.length === 0) {
@@ -19,13 +21,15 @@ const Cart = ({ cart, handleRemoveFromCart }) => {
         total: item.total,
       })),
       totalAmount: totalAmount,
+      totalItems: totalItems, // Adiciona o total de itens no payload
     };
 
     try {
-      const response = await axios.post("http://localhost:3000/postportaria", payload);
-      if (response.status === 200) {
+      const response = await api.post("/postorder", payload);
+      if (response.status === 201) {
         alert("Venda finalizada com sucesso!");
         // Aqui você pode limpar o carrinho
+        setCart([]);
       } else {
         alert("Erro ao finalizar venda. Tente novamente.");
       }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
@@ -11,8 +12,8 @@ const Header = () => {
         </div>
         {/* Links ou Botões */}
         <ul className="menu-links">
-          <li><a href="pdv">PDV</a></li>
-          <li><a href="relatorio">Relatório</a></li>
+          <li><Link to="/pdv">PDV</Link></li>
+          <li><Link to="/relatorio">Relatório</Link></li>
         </ul>
       </div>
     </nav>

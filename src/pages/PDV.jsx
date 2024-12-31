@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import api from "../services/api";
+
 import ProductList from "../components/ProductList";
 import Cart from "../components/Cart";
 import "./../styles/PDV.css";
@@ -10,12 +11,22 @@ const PDV = () => {
   const [quantity, setQuantity] = useState({});
 
   useEffect(() => {
-    axios.get("http://localhost:3000/product")
-      .then((response) => {
-        setProducts(response.data.filter((p) => p.status === "ativo"));
-      })
-      .catch((err) => console.error(err));
+    const fetchProducts = async () => {
+      try {
+        const response = await api.get("/listarproduct");
+        setProducts(response.data.filter((p) => p.status === "Ativo"));
+      } catch (error) {
+        console.error("Erro ao buscar os produtos:", error);
+      }
+    };
+  
+    fetchProducts();
   }, []);
+
+
+
+
+
 
   const handleAddToCart = (product) => {
     const qty = parseInt(quantity[product.id_product] || 0);
@@ -41,7 +52,7 @@ const PDV = () => {
         />
       </div>
       <div className="pdv-column">
-        <Cart cart={cart} handleRemoveFromCart={handleRemoveFromCart} />
+        <Cart cart={cart} setCart={setCart} handleRemoveFromCart={handleRemoveFromCart} />
       </div>
     </div>
   );

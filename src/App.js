@@ -9,22 +9,19 @@ import Footer from './components/Footer'; // Importe o Footer
 
 const App = () => {
   return (
-    <Router>
-    <div className="app">
-      <Header />
-
-      <div className="content">
-      <Routes>
-          <Route path="/" element={<PDV />} />
-          <Route path="/pdv" element={<PDV />} />
-          
-          <Route path="/relatorio" element={<Relatorio />} />
-          <Route path="*" element={<NotFound />} /> {/* Captura rotas não definidas */}
-      </Routes>
+    <Router basename="/portaria">
+      <div className="app">
+        <Header />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<PDV />} />
+            <Route path="/pdv" element={<PDV />} />
+            <Route path="/relatorio" element={<Relatorio />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
+        <Footer />
       </div>
-
-      <Footer /> {/* Adicione o Footer aqui */}
-    </div>
     </Router>
   );
 };
