@@ -1,0 +1,21 @@
+/* Layout Principal */
+.pdv-layout {
+    display: flex;
+    gap: 2rem; /* Espaçamento entre colunas */
+    padding: 2rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    justify-content: center; /* Centraliza o conteúdo */
+  }
+  
+  /* Colunas */
+  .pdv-column {
+    flex: 1; /* Ocupa o mesmo espaço */
+    max-width: 50%; /* Limita a largura máxima de cada coluna */
+    background: var(--container-background);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Scroll caso o conteúdo ultrapasse */
+  }
+  

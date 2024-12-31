@@ -1,0 +1,19 @@
+{
+    "product": [{ 
+		"id_product": 1, 
+		"product": "Entrada Inteira", 
+		"value": "50.00",  
+		"status": "ativo" 
+	},
+    { 
+		"id_product": 2, 
+		"product": "Entrada Idoso", 
+		"value": "25.00",  
+		"status": "ativo" 
+	},
+    { 
+		"id_product": 3, 
+		"product": "Entrada Infantil", 
+		"value": "38.00",  
+		"status": "ativo" 
+	} ]}

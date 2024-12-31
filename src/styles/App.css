@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  --primary-color: #8257e5; /* Roxo Rocketseat */
+  --primary-dark-color: #6f48c9;
+  --secondary-color: #04d361; /* Verde Rocketseat */
+  --secondary-dark-color: #03a14a;
+  --background-color: #121214; /* Fundo escuro Rocketseat */
+  --container-background: #202024;
+  --text-color: #e1e1e6; /* Texto claro */
+  --border-color: #323238;
+  --input-background: #121214;
+  --alert-color: #d32604;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+nav {
+  background-color: var(--container-background);
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-color);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul li {
+  margin: 0 0.5rem;
+}
+
+nav ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+  font-size: 0.9rem;
+}
+
+nav ul li a:hover {
+  background-color: var(--primary-color);
+}
+
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--container-background);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para o select */
+form select,
+.form-group select {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--input-background);
+  color: var(--text-color);
+}
+
+
+
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row; /* Garante disposição horizontal */
+  gap: 1rem; /* Espaçamento entre os elementos */
+  align-items: center; /* Alinha verticalmente os elementos */
+  justify-content: space-between; /* Espaçamento uniforme */
+}
+
+/* Estilos para o grupo de formulário */
+.form-group {
+  flex: 1; /* Faz os elementos ocuparem tamanhos iguais */
+  display: flex;
+  flex-direction: column;
+  max-width: 48%; /* Limita o tamanho dos elementos em 48% para caberem lado a lado */
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+form input {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--input-background);
+  color: var(--text-color);
+}
+
+form input::placeholder {
+  color: #7c7c8a;
+}
+
+/* Estilos para o input de data */
+input[type="date"] {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--input-background);
+  color: var(--text-color);
+  /* Remover estilos padrão do input de data */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+button {
+  padding: 0.7rem;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.3s;
+  width: 100%;
+}
+
+button:hover {
+  background-color: var(--primary-dark-color);
+}
+
+.pdv-layout {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  justify-content: center;
+}
+
+.pdv-column {
+  flex: 1;
+  max-width: 50%;
+  background: var(--container-background);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+/* Estilos para tabelas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table th,
+table td {
+  border: 1px solid var(--border-color);
+  padding: 0.75rem;
+  text-align: left;
+  color: var(--text-color);
+}
+
+table th {
+  background-color: var(--container-background);
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+table tr:nth-child(even) {
+  background-color: #1f1f23;
+}
+
+.product-quantity-input {
+  width: 50px;
+  padding: 0.3rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  text-align: center;
+  background: var(--input-background);
+  color: var(--text-color);
+}
+
+.product-add-btn {
+  background: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.3s;
+}
+
+.product-add-btn:hover {
+  background: var(--primary-dark-color);
+}
+
+.cart-remove-btn {
+  background: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.3s;
+}
+
+.cart-remove-btn:hover {
+  background: var(--secondary-dark-color);
+}
+
+.totais {
+  padding-top: 5px;
+  text-align: right;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.totais strong {
+  color: var(--secondary-color);
+  font-size: 25px;
+  font-weight: 900;
+}
+
+
+/* Estilos para o Footer */
+.footer {
+  background-color: var(--container-background);
+  color: var(--text-color);
+  text-align: center;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-color);
+  margin-top: 2rem;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.footer strong {
+  color: var(--primary-color);
+}
+
+
+
+.menu {
+  background-color: var(--container-background);
+  padding: 1rem 1rem;
+  border-bottom: 2px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Alinha logo e links */
+  max-width: 1200px;
+  margin: 0 auto; /* Centraliza o menu na página */
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: 100;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.menu-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem; /* Espaçamento entre os links */
+  margin: 0;
+  padding: 0;
+}
+
+.menu-links li {
+  margin: 0;
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-links a:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .menu-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .menu-links a {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+.app {
+  display: flex;
+  flex-direction: column; /* Organiza os filhos em coluna */
+  min-height: 100vh; /* Garante que ocupe a altura total da viewport */
+}
+
+.app > * {
+  flex-shrink: 0; /* Evita que os elementos filhos encolham */
+}
+
+.app .content {
+  flex: 1; /* Faz o conteúdo principal expandir para ocupar o espaço disponível */
+}
